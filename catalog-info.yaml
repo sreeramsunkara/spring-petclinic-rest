@@ -12,7 +12,7 @@ metadata:
     - postgres
     - petclinic
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=spring-petclinic'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=spring-petclinic-rest'
 spec:
   type: service
   lifecycle: experimental
