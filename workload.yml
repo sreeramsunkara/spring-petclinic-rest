@@ -13,7 +13,7 @@ spec:
     git:
       url: https://github.com/sreeramsunkara/spring-petclinic-rest.git
       ref:
-        branch: main
+        branch: master
   env:
   - name: SPRING_PROFILES_ACTIVE
     value: hsqldb,spring-data-jpa
