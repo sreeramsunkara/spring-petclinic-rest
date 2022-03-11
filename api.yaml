@@ -9,7 +9,7 @@ spec:
   owner: tap-gui
   system: tap
   definition:
-    $text: |
+    $json: |
       {
        "openapi":"3.0.3",
        "info":{
@@ -3806,4 +3806,3 @@ spec:
           }
        }
     }
-          
