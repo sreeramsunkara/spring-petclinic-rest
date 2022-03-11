@@ -9,4 +9,3800 @@ spec:
   owner: tap-gui
   system: tap
   definition:
-    $text: https://spring-petclinic-rest-tap-dev.apps.tap.tanzu4u.net/v3/api-docs
+    $text: |
+    {
+"openapi": "3.0.3",
+"info": {
+"title": "REST Petclinic backend Api Documentation",
+"description": "This is REST API documentation of the Spring Petclinic backend. If authentication is enabled, when calling the APIs use admin/admin",
+"termsOfService": "Petclinic backend terms of service",
+"contact": {
+"name": "Vitaliy Fedoriv",
+"url": "https://github.com/spring-petclinic/spring-petclinic-rest",
+"email": "vitaliy.fedoriv@gmail.com"
+},
+"license": {
+"name": "Apache 2.0",
+"url": "http://www.apache.org/licenses/LICENSE-2.0"
+},
+"version": "1.0"
+},
+"servers": [
+{
+"url": "https://spring-petclinic-rest-tap-dev.apps.tap.tanzu4u.net:443",
+"description": "Inferred Url"
+}
+],
+"tags": [
+{
+"name": "basic-error-controller",
+"description": "Basic Error Controller"
+},
+{
+"name": "operation-handler",
+"description": "Operation Handler"
+},
+{
+"name": "owner-rest-controller",
+"description": "the owners API"
+},
+{
+"name": "pet-rest-controller",
+"description": "the pets API"
+},
+{
+"name": "pet-type-rest-controller",
+"description": "the pettypes API"
+},
+{
+"name": "root-rest-controller",
+"description": "Root Rest Controller"
+},
+{
+"name": "specialty-rest-controller",
+"description": "the specialties API"
+},
+{
+"name": "user-rest-controller",
+"description": "the users API"
+},
+{
+"name": "vet-rest-controller",
+"description": "the vets API"
+},
+{
+"name": "visit-rest-controller",
+"description": "the visits API"
+}
+],
+"paths": {
+"/error": {
+"get": {
+"tags": [
+"basic-error-controller"
+],
+"summary": "error",
+"operationId": "errorUsingGET",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"type": "object",
+"additionalProperties": {
+"type": "object"
+}
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+}
+}
+},
+"put": {
+"tags": [
+"basic-error-controller"
+],
+"summary": "error",
+"operationId": "errorUsingPUT",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"type": "object",
+"additionalProperties": {
+"type": "object"
+}
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+}
+}
+},
+"post": {
+"tags": [
+"basic-error-controller"
+],
+"summary": "error",
+"operationId": "errorUsingPOST",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"type": "object",
+"additionalProperties": {
+"type": "object"
+}
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+}
+}
+},
+"delete": {
+"tags": [
+"basic-error-controller"
+],
+"summary": "error",
+"operationId": "errorUsingDELETE",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"type": "object",
+"additionalProperties": {
+"type": "object"
+}
+}
+}
+}
+},
+"204": {
+"description": "No Content"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+}
+}
+},
+"options": {
+"tags": [
+"basic-error-controller"
+],
+"summary": "error",
+"operationId": "errorUsingOPTIONS",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"type": "object",
+"additionalProperties": {
+"type": "object"
+}
+}
+}
+}
+},
+"204": {
+"description": "No Content"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+}
+}
+},
+"head": {
+"tags": [
+"basic-error-controller"
+],
+"summary": "error",
+"operationId": "errorUsingHEAD",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"type": "object",
+"additionalProperties": {
+"type": "object"
+}
+}
+}
+}
+},
+"204": {
+"description": "No Content"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+}
+}
+},
+"patch": {
+"tags": [
+"basic-error-controller"
+],
+"summary": "error",
+"operationId": "errorUsingPATCH",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"type": "object",
+"additionalProperties": {
+"type": "object"
+}
+}
+}
+}
+},
+"204": {
+"description": "No Content"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+}
+}
+},
+"trace": {
+"tags": [
+"basic-error-controller"
+],
+"summary": "error",
+"operationId": "errorUsingTRACE",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"type": "object",
+"additionalProperties": {
+"type": "object"
+}
+}
+}
+}
+},
+"204": {
+"description": "No Content"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+}
+}
+}
+},
+"/livez": {
+"get": {
+"tags": [
+"operation-handler"
+],
+"summary": "handle",
+"operationId": "handleUsingGET",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"type": "object",
+"additionalProperties": {
+"type": "string"
+}
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"application/json": {
+"schema": {
+"type": "object"
+}
+},
+"application/vnd.spring-boot.actuator.v3+json": {
+"schema": {
+"type": "object"
+}
+},
+"application/vnd.spring-boot.actuator.v2+json": {
+"schema": {
+"type": "object"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+}
+}
+}
+},
+"/readyz": {
+"get": {
+"tags": [
+"operation-handler"
+],
+"summary": "handle",
+"operationId": "handleUsingGET_1",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"type": "object",
+"additionalProperties": {
+"type": "string"
+}
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"application/json": {
+"schema": {
+"type": "object"
+}
+},
+"application/vnd.spring-boot.actuator.v3+json": {
+"schema": {
+"type": "object"
+}
+},
+"application/vnd.spring-boot.actuator.v2+json": {
+"schema": {
+"type": "object"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+}
+}
+}
+},
+"/api/owners": {
+"get": {
+"tags": [
+"owner"
+],
+"summary": "Lists pet owners",
+"description": "Returns an array of pet owners.",
+"operationId": "listOwners",
+"parameters": [
+{
+"name": "lastName",
+"in": "query",
+"description": "Last name.",
+"required": false,
+"style": "form",
+"schema": {
+"type": "string"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Owner details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/OwnerDto"
+}
+}
+}
+}
+},
+"304": {
+"description": "Not modified."
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"post": {
+"tags": [
+"owner"
+],
+"summary": "Adds a pet owner",
+"description": "Records the details of a new pet owner.",
+"operationId": "addOwner",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/OwnerFieldsDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/OwnerDto"
+}
+}
+}
+},
+"201": {
+"description": "The pet owner was sucessfully added.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/OwnerDto"
+}
+}
+}
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/owners/{ownerId}": {
+"get": {
+"tags": [
+"owner"
+],
+"summary": "Get a pet owner by ID",
+"description": "Returns the pet owner or a 404 error.",
+"operationId": "getOwner",
+"parameters": [
+{
+"name": "ownerId",
+"in": "path",
+"description": "The ID of the pet owner.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Owner details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/OwnerDto"
+}
+}
+}
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Owner not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"put": {
+"tags": [
+"owner"
+],
+"summary": "Update a pet owner's details",
+"description": "Updates the pet owner record with the specified details.",
+"operationId": "updateOwner",
+"parameters": [
+{
+"name": "ownerId",
+"in": "path",
+"description": "The ID of the pet owner.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/OwnerFieldsDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "Update successful.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/OwnerDto"
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Owner not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"delete": {
+"tags": [
+"owner"
+],
+"summary": "Delete an owner by ID",
+"description": "Returns the owner or a 404 error.",
+"operationId": "deleteOwner",
+"parameters": [
+{
+"name": "ownerId",
+"in": "path",
+"description": "The ID of the owner.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Owner details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/OwnerDto"
+}
+}
+}
+},
+"204": {
+"description": "No Content"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Owner  not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/owners/{ownerId}/pets": {
+"post": {
+"tags": [
+"pet"
+],
+"summary": "Adds a pet to an owner",
+"description": "Records the details of a new pet.",
+"operationId": "addPetToOwner",
+"parameters": [
+{
+"name": "ownerId",
+"in": "path",
+"description": "The ID of the pet owner.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetFieldsDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetDto"
+}
+}
+}
+},
+"201": {
+"description": "The pet was sucessfully added.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetDto"
+}
+}
+}
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Pet not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/owners/{ownerId}/pets/{petId}": {
+"get": {
+"tags": [
+"pet"
+],
+"summary": "Get a pet by ID",
+"description": "Returns the pet or a 404 error.",
+"operationId": "getOwnersPet",
+"parameters": [
+{
+"name": "ownerId",
+"in": "path",
+"description": "The ID of the pet owner.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+},
+{
+"name": "petId",
+"in": "path",
+"description": "The ID of the pet.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Pet details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetDto"
+}
+}
+}
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Pet not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"put": {
+"tags": [
+"pet"
+],
+"summary": "Update a pet's details",
+"description": "Updates the pet record with the specified details.",
+"operationId": "updateOwnersPet",
+"parameters": [
+{
+"name": "ownerId",
+"in": "path",
+"description": "The ID of the pet owner.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+},
+{
+"name": "petId",
+"in": "path",
+"description": "The ID of the pet.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetFieldsDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "Error-ModelName{namespace='java.lang', name='Void'}"
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"204": {
+"description": "Update successful.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "Error-ModelName{namespace='java.lang', name='Void'}"
+}
+}
+}
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Pet not found for this owner.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/owners/{ownerId}/pets/{petId}/visits": {
+"post": {
+"tags": [
+"visit"
+],
+"summary": "Adds a vet visit",
+"description": "Records the details of a new vet visit.",
+"operationId": "addVisitToOwner",
+"parameters": [
+{
+"name": "ownerId",
+"in": "path",
+"description": "The ID of the pet owner.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+},
+{
+"name": "petId",
+"in": "path",
+"description": "The ID of the pet.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VisitFieldsDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VisitDto"
+}
+}
+}
+},
+"201": {
+"description": "The vet visit was sucessfully added.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VisitDto"
+}
+}
+}
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Pet not found for this owner.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/pets": {
+"get": {
+"tags": [
+"pet"
+],
+"summary": "Lists pet",
+"description": "Returns an array of pet .",
+"operationId": "listPets",
+"responses": {
+"200": {
+"description": "Pet types found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/PetDto"
+}
+}
+}
+}
+},
+"304": {
+"description": "Not modified."
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"post": {
+"tags": [
+"pet"
+],
+"summary": "Create a pet",
+"description": "Creates a pet .",
+"operationId": "addPet",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "Pet type created successfully.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetDto"
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Pet not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/pets/{petId}": {
+"get": {
+"tags": [
+"pet"
+],
+"summary": "Get a pet by ID",
+"description": "Returns the pet  or a 404 error.",
+"operationId": "getPet",
+"parameters": [
+{
+"name": "petId",
+"in": "path",
+"description": "The ID of the pet.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Pet details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetDto"
+}
+}
+}
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Pet not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"put": {
+"tags": [
+"pet"
+],
+"summary": "Update a pet by ID",
+"description": "Returns the pet or a 404 error.",
+"operationId": "updatePet",
+"parameters": [
+{
+"name": "petId",
+"in": "path",
+"description": "The ID of the pet.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "Pet details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetDto"
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Pet not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"delete": {
+"tags": [
+"pet"
+],
+"summary": "Delete a pet by ID",
+"description": "Returns the pet or a 404 error.",
+"operationId": "deletePet",
+"parameters": [
+{
+"name": "petId",
+"in": "path",
+"description": "The ID of the pet.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Pet details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetDto"
+}
+}
+}
+},
+"204": {
+"description": "No Content"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Pet not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/pettypes": {
+"get": {
+"tags": [
+"pettypes"
+],
+"summary": "Lists pet types",
+"description": "Returns an array of pet types.",
+"operationId": "listPetTypes",
+"responses": {
+"200": {
+"description": "Pet types found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/PetTypeDto"
+}
+}
+}
+}
+},
+"304": {
+"description": "Not modified."
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"post": {
+"tags": [
+"pettypes"
+],
+"summary": "Create a pet type",
+"description": "Creates a pet type .",
+"operationId": "addPetType",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetTypeDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "Pet type created successfully.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetTypeDto"
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Pet Type not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/pettypes/{petTypeId}": {
+"get": {
+"tags": [
+"pettypes"
+],
+"summary": "Get a pet type by ID",
+"description": "Returns the pet type or a 404 error.",
+"operationId": "getPetType",
+"parameters": [
+{
+"name": "petTypeId",
+"in": "path",
+"description": "The ID of the pet type.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Pet type details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetTypeDto"
+}
+}
+}
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Pet Type not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"put": {
+"tags": [
+"pettypes"
+],
+"summary": "Update a pet type by ID",
+"description": "Returns the pet type or a 404 error.",
+"operationId": "updatePetType",
+"parameters": [
+{
+"name": "petTypeId",
+"in": "path",
+"description": "The ID of the pet type.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetTypeDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "Pet type details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetTypeDto"
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Pet Type not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"delete": {
+"tags": [
+"pettypes"
+],
+"summary": "Delete a pet type by ID",
+"description": "Returns the pet type or a 404 error.",
+"operationId": "deletePetType",
+"parameters": [
+{
+"name": "petTypeId",
+"in": "path",
+"description": "The ID of the pet type.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Pet type details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/PetTypeDto"
+}
+}
+}
+},
+"204": {
+"description": "No Content"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Pet type not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/": {
+"get": {
+"tags": [
+"root-rest-controller"
+],
+"summary": "redirectToSwagger",
+"operationId": "redirectToSwaggerUsingGET",
+"responses": {
+"200": {
+"description": "OK"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+}
+}
+},
+"put": {
+"tags": [
+"root-rest-controller"
+],
+"summary": "redirectToSwagger",
+"operationId": "redirectToSwaggerUsingPUT",
+"responses": {
+"200": {
+"description": "OK"
+},
+"201": {
+"description": "Created"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+}
+}
+},
+"post": {
+"tags": [
+"root-rest-controller"
+],
+"summary": "redirectToSwagger",
+"operationId": "redirectToSwaggerUsingPOST",
+"responses": {
+"200": {
+"description": "OK"
+},
+"201": {
+"description": "Created"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+}
+}
+},
+"delete": {
+"tags": [
+"root-rest-controller"
+],
+"summary": "redirectToSwagger",
+"operationId": "redirectToSwaggerUsingDELETE",
+"responses": {
+"200": {
+"description": "OK"
+},
+"204": {
+"description": "No Content"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+}
+}
+},
+"options": {
+"tags": [
+"root-rest-controller"
+],
+"summary": "redirectToSwagger",
+"operationId": "redirectToSwaggerUsingOPTIONS",
+"responses": {
+"200": {
+"description": "OK"
+},
+"204": {
+"description": "No Content"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+}
+}
+},
+"head": {
+"tags": [
+"root-rest-controller"
+],
+"summary": "redirectToSwagger",
+"operationId": "redirectToSwaggerUsingHEAD",
+"responses": {
+"200": {
+"description": "OK"
+},
+"204": {
+"description": "No Content"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+}
+}
+},
+"patch": {
+"tags": [
+"root-rest-controller"
+],
+"summary": "redirectToSwagger",
+"operationId": "redirectToSwaggerUsingPATCH",
+"responses": {
+"200": {
+"description": "OK"
+},
+"204": {
+"description": "No Content"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+}
+}
+},
+"trace": {
+"tags": [
+"root-rest-controller"
+],
+"summary": "redirectToSwagger",
+"operationId": "redirectToSwaggerUsingTRACE",
+"responses": {
+"200": {
+"description": "OK"
+},
+"204": {
+"description": "No Content"
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+}
+}
+}
+},
+"/api/specialties": {
+"get": {
+"tags": [
+"specialty"
+],
+"summary": "Lists specialties",
+"description": "Returns an array of specialty .",
+"operationId": "listSpecialties",
+"responses": {
+"200": {
+"description": "Specialties found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/SpecialtyDto"
+}
+}
+}
+}
+},
+"304": {
+"description": "Not modified."
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"post": {
+"tags": [
+"specialty"
+],
+"summary": "Create a specialty",
+"description": "Creates a specialty .",
+"operationId": "addSpecialty",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/SpecialtyDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "Specialty created successfully.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/SpecialtyDto"
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Specialty not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/specialties/{specialtyId}": {
+"get": {
+"tags": [
+"specialty"
+],
+"summary": "Get a specialty by ID",
+"description": "Returns the specialty or a 404 error.",
+"operationId": "getSpecialty",
+"parameters": [
+{
+"name": "specialtyId",
+"in": "path",
+"description": "The ID of the pet.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Specialty details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/SpecialtyDto"
+}
+}
+}
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Specialty not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"put": {
+"tags": [
+"specialty"
+],
+"summary": "Update a specialty by ID",
+"description": "Returns the specialty or a 404 error.",
+"operationId": "updateSpecialty",
+"parameters": [
+{
+"name": "specialtyId",
+"in": "path",
+"description": "The ID of the specialty.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/SpecialtyDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "Specialty details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/SpecialtyDto"
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Specialty not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"delete": {
+"tags": [
+"specialty"
+],
+"summary": "Delete a specialty by ID",
+"description": "Returns the specialty or a 404 error.",
+"operationId": "deleteSpecialty",
+"parameters": [
+{
+"name": "specialtyId",
+"in": "path",
+"description": "The ID of the specialty.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Specialty details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/SpecialtyDto"
+}
+}
+}
+},
+"204": {
+"description": "No Content"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Specialty not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/users": {
+"post": {
+"tags": [
+"user"
+],
+"summary": "Create a user",
+"description": "Creates a user.",
+"operationId": "addUser",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/UserDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "User created successfully.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/UserDto"
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "User not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/vets": {
+"get": {
+"tags": [
+"vet"
+],
+"summary": "Lists vets",
+"description": "Returns an array of vets.",
+"operationId": "listVets",
+"responses": {
+"200": {
+"description": "Vets found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/VetDto"
+}
+}
+}
+}
+},
+"304": {
+"description": "Not modified."
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"post": {
+"tags": [
+"vet"
+],
+"summary": "Create a Vet",
+"description": "Creates a vet .",
+"operationId": "addVet",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VetDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "Vet created successfully.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VetDto"
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Vet not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/vets/{vetId}": {
+"get": {
+"tags": [
+"vet"
+],
+"summary": "Get a vet by ID",
+"description": "Returns the vet or a 404 error.",
+"operationId": "getVet",
+"parameters": [
+{
+"name": "vetId",
+"in": "path",
+"description": "The ID of the vet.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Vet details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VetDto"
+}
+}
+}
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Vet not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"put": {
+"tags": [
+"vet"
+],
+"summary": "Update a vet  by ID",
+"description": "Returns the vet or a 404 error.",
+"operationId": "updateVet",
+"parameters": [
+{
+"name": "vetId",
+"in": "path",
+"description": "The ID of the vet.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VetDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "Pet type details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VetDto"
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Vet not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"delete": {
+"tags": [
+"vets"
+],
+"summary": "Delete a vet by ID",
+"description": "Returns the vet or a 404 error.",
+"operationId": "deleteVet",
+"parameters": [
+{
+"name": "vetId",
+"in": "path",
+"description": "The ID of the vet.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Vet details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VetDto"
+}
+}
+}
+},
+"204": {
+"description": "No Content"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Vet not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/visits": {
+"get": {
+"tags": [
+"visit"
+],
+"summary": "Lists visits",
+"description": "Returns an array of visit .",
+"operationId": "listVisits",
+"responses": {
+"200": {
+"description": "visits found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/VisitDto"
+}
+}
+}
+}
+},
+"304": {
+"description": "Not modified."
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Not Found"
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"post": {
+"tags": [
+"visit"
+],
+"summary": "Create a visit",
+"description": "Creates a visit.",
+"operationId": "addVisit",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VisitDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "visit created successfully.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VisitDto"
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Visit not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+},
+"/api/visits/{visitId}": {
+"get": {
+"tags": [
+"visit"
+],
+"summary": "Get a visit by ID",
+"description": "Returns the visit or a 404 error.",
+"operationId": "getVisit",
+"parameters": [
+{
+"name": "visitId",
+"in": "path",
+"description": "The ID of the visit.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Visit details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VisitDto"
+}
+}
+}
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Visit not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"put": {
+"tags": [
+"visit"
+],
+"summary": "Update a visit by ID",
+"description": "Returns the visit or a 404 error.",
+"operationId": "updateVisit",
+"parameters": [
+{
+"name": "visitId",
+"in": "path",
+"description": "The ID of the visit.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VisitDto"
+}
+}
+}
+},
+"responses": {
+"200": {
+"description": "Visit details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VisitDto"
+}
+}
+}
+},
+"201": {
+"description": "Created"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Visit not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+},
+"delete": {
+"tags": [
+"visit"
+],
+"summary": "Delete a visit by ID",
+"description": "Returns the visit or a 404 error.",
+"operationId": "deleteVisit",
+"parameters": [
+{
+"name": "visitId",
+"in": "path",
+"description": "The ID of the visit.",
+"required": true,
+"style": "simple",
+"schema": {
+"minimum": 0,
+"exclusiveMinimum": false,
+"type": "integer",
+"format": "int32"
+}
+}
+],
+"responses": {
+"200": {
+"description": "Visit details found and returned.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/VisitDto"
+}
+}
+}
+},
+"204": {
+"description": "No Content"
+},
+"304": {
+"description": "Not modified."
+},
+"400": {
+"description": "Bad request.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"401": {
+"description": "Unauthorized"
+},
+"403": {
+"description": "Forbidden"
+},
+"404": {
+"description": "Visit not found.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+},
+"500": {
+"description": "Server error.",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/RestErrorDto"
+}
+}
+}
+}
+}
+}
+}
+},
+"components": {
+"schemas": {
+"ModelAndView": {
+"title": "ModelAndView",
+"type": "object",
+"properties": {
+"empty": {
+"type": "boolean"
+},
+"model": {
+"type": "object"
+},
+"modelMap": {
+"type": "object",
+"additionalProperties": {
+"type": "object"
+}
+},
+"reference": {
+"type": "boolean"
+},
+"status": {
+"type": "string",
+"enum": [
+"ACCEPTED",
+"ALREADY_REPORTED",
+"BAD_GATEWAY",
+"BAD_REQUEST",
+"BANDWIDTH_LIMIT_EXCEEDED",
+"CHECKPOINT",
+"CONFLICT",
+"CONTINUE",
+"CREATED",
+"DESTINATION_LOCKED",
+"EXPECTATION_FAILED",
+"FAILED_DEPENDENCY",
+"FORBIDDEN",
+"FOUND",
+"GATEWAY_TIMEOUT",
+"GONE",
+"HTTP_VERSION_NOT_SUPPORTED",
+"IM_USED",
+"INSUFFICIENT_SPACE_ON_RESOURCE",
+"INSUFFICIENT_STORAGE",
+"INTERNAL_SERVER_ERROR",
+"I_AM_A_TEAPOT",
+"LENGTH_REQUIRED",
+"LOCKED",
+"LOOP_DETECTED",
+"METHOD_FAILURE",
+"METHOD_NOT_ALLOWED",
+"MOVED_PERMANENTLY",
+"MOVED_TEMPORARILY",
+"MULTIPLE_CHOICES",
+"MULTI_STATUS",
+"NETWORK_AUTHENTICATION_REQUIRED",
+"NON_AUTHORITATIVE_INFORMATION",
+"NOT_ACCEPTABLE",
+"NOT_EXTENDED",
+"NOT_FOUND",
+"NOT_IMPLEMENTED",
+"NOT_MODIFIED",
+"NO_CONTENT",
+"OK",
+"PARTIAL_CONTENT",
+"PAYLOAD_TOO_LARGE",
+"PAYMENT_REQUIRED",
+"PERMANENT_REDIRECT",
+"PRECONDITION_FAILED",
+"PRECONDITION_REQUIRED",
+"PROCESSING",
+"PROXY_AUTHENTICATION_REQUIRED",
+"REQUESTED_RANGE_NOT_SATISFIABLE",
+"REQUEST_ENTITY_TOO_LARGE",
+"REQUEST_HEADER_FIELDS_TOO_LARGE",
+"REQUEST_TIMEOUT",
+"REQUEST_URI_TOO_LONG",
+"RESET_CONTENT",
+"SEE_OTHER",
+"SERVICE_UNAVAILABLE",
+"SWITCHING_PROTOCOLS",
+"TEMPORARY_REDIRECT",
+"TOO_EARLY",
+"TOO_MANY_REQUESTS",
+"UNAUTHORIZED",
+"UNAVAILABLE_FOR_LEGAL_REASONS",
+"UNPROCESSABLE_ENTITY",
+"UNSUPPORTED_MEDIA_TYPE",
+"UPGRADE_REQUIRED",
+"URI_TOO_LONG",
+"USE_PROXY",
+"VARIANT_ALSO_NEGOTIATES"
+]
+},
+"view": {
+"$ref": "#/components/schemas/View"
+},
+"viewName": {
+"type": "string"
+}
+}
+},
+"OwnerDto": {
+"title": "OwnerDto",
+"required": [
+"address",
+"city",
+"firstName",
+"lastName",
+"pets",
+"telephone"
+],
+"type": "object",
+"properties": {
+"address": {
+"maxLength": 255,
+"minLength": 1,
+"type": "string",
+"description": "The postal address of the pet owner.",
+"example": "110 W. Liberty St."
+},
+"city": {
+"maxLength": 80,
+"minLength": 1,
+"type": "string",
+"description": "The city of the pet owner.",
+"example": "Madison"
+},
+"firstName": {
+"maxLength": 30,
+"minLength": 1,
+"pattern": "^[a-zA-Z]*$",
+"type": "string",
+"description": "The first name of the pet owner.",
+"example": "George"
+},
+"id": {
+"type": "integer",
+"description": "The ID of the pet owner.",
+"format": "int32",
+"readOnly": true,
+"example": 1
+},
+"lastName": {
+"maxLength": 30,
+"minLength": 1,
+"pattern": "^[a-zA-Z]*$",
+"type": "string",
+"description": "The last name of the pet owner.",
+"example": "Franklin"
+},
+"pets": {
+"type": "array",
+"description": "The pets owned by this individual including any booked vet visits.",
+"readOnly": true,
+"items": {
+"$ref": "#/components/schemas/PetDto"
+}
+},
+"telephone": {
+"maxLength": 20,
+"minLength": 1,
+"pattern": "^[0-9]*$",
+"type": "string",
+"description": "The telephone number of the pet owner.",
+"example": "6085551023"
+}
+},
+"description": "A pet owner."
+},
+"OwnerFieldsDto": {
+"title": "OwnerFieldsDto",
+"required": [
+"address",
+"city",
+"firstName",
+"lastName",
+"telephone"
+],
+"type": "object",
+"properties": {
+"address": {
+"maxLength": 255,
+"minLength": 1,
+"type": "string",
+"description": "The postal address of the pet owner.",
+"example": "110 W. Liberty St."
+},
+"city": {
+"maxLength": 80,
+"minLength": 1,
+"type": "string",
+"description": "The city of the pet owner.",
+"example": "Madison"
+},
+"firstName": {
+"maxLength": 30,
+"minLength": 1,
+"pattern": "^[a-zA-Z]*$",
+"type": "string",
+"description": "The first name of the pet owner.",
+"example": "George"
+},
+"lastName": {
+"maxLength": 30,
+"minLength": 1,
+"pattern": "^[a-zA-Z]*$",
+"type": "string",
+"description": "The last name of the pet owner.",
+"example": "Franklin"
+},
+"telephone": {
+"maxLength": 20,
+"minLength": 1,
+"pattern": "^[0-9]*$",
+"type": "string",
+"description": "The telephone number of the pet owner.",
+"example": "6085551023"
+}
+},
+"description": "Editable fields of a pet owner."
+},
+"PetDto": {
+"title": "PetDto",
+"required": [
+"birthDate",
+"id",
+"name",
+"type",
+"visits"
+],
+"type": "object",
+"properties": {
+"birthDate": {
+"type": "string",
+"description": "The date of birth of the pet.",
+"format": "date"
+},
+"id": {
+"type": "integer",
+"description": "The ID of the pet.",
+"format": "int32",
+"readOnly": true,
+"example": 1
+},
+"name": {
+"maxLength": 30,
+"minLength": 0,
+"type": "string",
+"description": "The name of the pet.",
+"example": "Leo"
+},
+"ownerId": {
+"type": "integer",
+"description": "The ID of the pet's owner.",
+"format": "int32",
+"readOnly": true,
+"example": 1
+},
+"type": {
+"$ref": "#/components/schemas/PetTypeDto"
+},
+"visits": {
+"type": "array",
+"description": "Vet visit bookings for this pet.",
+"readOnly": true,
+"items": {
+"$ref": "#/components/schemas/VisitDto"
+}
+}
+},
+"description": "A pet."
+},
+"PetFieldsDto": {
+"title": "PetFieldsDto",
+"required": [
+"birthDate",
+"name",
+"type"
+],
+"type": "object",
+"properties": {
+"birthDate": {
+"type": "string",
+"description": "The date of birth of the pet.",
+"format": "date"
+},
+"name": {
+"maxLength": 30,
+"minLength": 0,
+"type": "string",
+"description": "The name of the pet.",
+"example": "Leo"
+},
+"type": {
+"$ref": "#/components/schemas/PetTypeDto"
+}
+},
+"description": "Editable fields of a pet."
+},
+"PetTypeDto": {
+"title": "PetTypeDto",
+"required": [
+"id",
+"name"
+],
+"type": "object",
+"properties": {
+"id": {
+"type": "integer",
+"description": "The ID of the pet type.",
+"format": "int32",
+"readOnly": true,
+"example": 1
+},
+"name": {
+"maxLength": 80,
+"minLength": 1,
+"type": "string",
+"description": "The name of the pet type.",
+"example": "cat"
+}
+},
+"description": "A pet type."
+},
+"RestErrorDto": {
+"title": "RestErrorDto",
+"required": [
+"error",
+"message",
+"path",
+"schemaValidationErrors",
+"status",
+"timestamp"
+],
+"type": "object",
+"properties": {
+"error": {
+"type": "string",
+"description": "The short error message.",
+"readOnly": true,
+"example": "Bad Request"
+},
+"message": {
+"type": "string",
+"description": "The long error message.",
+"readOnly": true,
+"example": "Request failed schema validation"
+},
+"path": {
+"type": "string",
+"description": "The path of the URL for this request.",
+"format": "uri",
+"readOnly": true,
+"example": "/api/owners"
+},
+"schemaValidationErrors": {
+"type": "array",
+"description": "Validation errors against the OpenAPI schema.",
+"items": {
+"type": "object",
+"additionalProperties": {
+"type": "object"
+}
+}
+},
+"status": {
+"type": "integer",
+"description": "The HTTP status code.",
+"format": "int32",
+"readOnly": true,
+"example": 400
+},
+"timestamp": {
+"type": "string",
+"description": "The time the error occured.",
+"format": "date-time",
+"readOnly": true
+},
+"trace": {
+"type": "string",
+"description": "The stacktrace for this error.",
+"readOnly": true,
+"example": "com.atlassian.oai.validator.springmvc.InvalidRequestException: ..."
+}
+},
+"description": "The schema for all error responses."
+},
+"RoleDto": {
+"title": "RoleDto",
+"required": [
+"name"
+],
+"type": "object",
+"properties": {
+"name": {
+"maxLength": 80,
+"minLength": 1,
+"type": "string",
+"description": "The role's name",
+"example": "admin"
+}
+},
+"description": "A role."
+},
+"SpecialtyDto": {
+"title": "SpecialtyDto",
+"required": [
+"id",
+"name"
+],
+"type": "object",
+"properties": {
+"id": {
+"type": "integer",
+"description": "The ID of the specialty.",
+"format": "int32",
+"readOnly": true,
+"example": 1
+},
+"name": {
+"maxLength": 80,
+"minLength": 1,
+"type": "string",
+"description": "The name of the specialty.",
+"example": "radiology"
+}
+},
+"description": "Fields of specialty of vets."
+},
+"UserDto": {
+"title": "UserDto",
+"required": [
+"username"
+],
+"type": "object",
+"properties": {
+"enabled": {
+"type": "boolean",
+"description": "Indicates if the user is enabled",
+"example": true
+},
+"password": {
+"maxLength": 80,
+"minLength": 1,
+"type": "string",
+"description": "The password",
+"example": "1234"
+},
+"roles": {
+"type": "array",
+"description": "The roles of an user",
+"items": {
+"$ref": "#/components/schemas/RoleDto"
+}
+},
+"username": {
+"maxLength": 80,
+"minLength": 1,
+"type": "string",
+"description": "The username",
+"example": "john.doe"
+}
+},
+"description": "An user."
+},
+"VetDto": {
+"title": "VetDto",
+"required": [
+"firstName",
+"id",
+"lastName",
+"specialties"
+],
+"type": "object",
+"properties": {
+"firstName": {
+"maxLength": 30,
+"minLength": 1,
+"pattern": "^[a-zA-Z]*$",
+"type": "string",
+"description": "The first name of the vet.",
+"example": "James"
+},
+"id": {
+"type": "integer",
+"description": "The ID of the vet.",
+"format": "int32",
+"readOnly": true,
+"example": 1
+},
+"lastName": {
+"maxLength": 30,
+"minLength": 1,
+"pattern": "^[a-zA-Z]*$",
+"type": "string",
+"description": "The last name of the vet.",
+"example": "Carter"
+},
+"specialties": {
+"type": "array",
+"description": "The specialties of the vet.",
+"items": {
+"$ref": "#/components/schemas/SpecialtyDto"
+}
+}
+},
+"description": "A veterinarian."
+},
+"View": {
+"title": "View",
+"type": "object",
+"properties": {
+"contentType": {
+"type": "string"
+}
+}
+},
+"VisitDto": {
+"title": "VisitDto",
+"required": [
+"description",
+"id"
+],
+"type": "object",
+"properties": {
+"date": {
+"type": "string",
+"description": "The date of the visit.",
+"format": "date"
+},
+"description": {
+"maxLength": 255,
+"minLength": 1,
+"type": "string",
+"description": "The description for the visit.",
+"example": "rabies shot"
+},
+"id": {
+"type": "integer",
+"description": "The ID of the visit.",
+"format": "int32",
+"readOnly": true,
+"example": 1
+},
+"petId": {
+"type": "integer",
+"description": "The ID of the pet.",
+"format": "int32",
+"readOnly": true,
+"example": 1
+}
+},
+"description": "A booking for a vet visit."
+},
+"VisitFieldsDto": {
+"title": "VisitFieldsDto",
+"required": [
+"description"
+],
+"type": "object",
+"properties": {
+"date": {
+"type": "string",
+"description": "The date of the visit.",
+"format": "date"
+},
+"description": {
+"maxLength": 255,
+"minLength": 1,
+"type": "string",
+"description": "The description for the visit.",
+"example": "rabies shot"
+}
+},
+"description": "Editable fields of a vet visit."
+}
+}
+}
+}
