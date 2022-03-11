@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: spring-petclinic-rest
+  description: the classic petclinic API from swagger.io, pulled from a live endpoint.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: tap-gui
+  system: tap
+  definition:
+    $text: https://spring-petclinic-rest-tap-dev.apps.tap.tanzu4u.net/v3/api-docs
