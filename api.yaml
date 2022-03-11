@@ -9,4 +9,4 @@ spec:
   owner: tap-gui
   system: tap
   definition:
-    $json: https://github.com/sreeramsunkara/spring-petclinic-rest/blob/master/api-docs.json
+    $text: https://github.com/sreeramsunkara/spring-petclinic-rest/blob/master/api-docs.json
